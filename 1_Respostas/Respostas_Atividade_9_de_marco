@@ -1,0 +1,14 @@
+Questão 1) A diferença consiste na possibilidade de ler e escrever nos barramentos. O barramento de dados permite a leitura e a
+escrita, já o barramento de endereço permite apenas a leitura.
+
+Questão 2) As diferenças principais se encontram na volatilidade, na velocidade de acesso, e na possibilidade de escrita. A me-
+mória RAM (Random Access Memory é mais rápida quanto ao acesso aos dados e possibilita tanto a escrita quanto a leitura, entre-
+tanto seus dados são perdidos quando é desligada a enrgia. Já a memória ROM (Read Only Memory) possui velocidade de acesso aos 
+dados menor em comparação à memória RAM e não perde seus dados quando é desligada a energia, porém ela possui apenas a opção de
+leitura.
+
+Questão 3) Considerando a memória ROM como uma gama de memórias que possuem como principal finalidade a leitura de dados, como 
+as PROM, EPROM, EEPROM e memória Flash. Então, a variável 'i' é armazenada na memória RAM, pois logo em seguida será descartada,
+já o programa será armazenado na memória ROM, por que é de nosso interesse utilizá-lo novamente.
+
+Questão 4) 
