@@ -1,0 +1,52 @@
+1. Quais as diferenças entre os barramentos de dados e de endereços?
+
+	A diferença consiste na possibilidade de ler e escrever nos barramentos. O barramento de dados permite a leitura e a
+escrita, já o barramento de endereço permite apenas a leitura.
+
+2. Quais são as diferenças entre as memórias RAM e ROM?
+
+	As diferenças principais se encontram na volatilidade, na velocidade de acesso, e na possibilidade de escrita. A me-
+mória RAM (Random Access Memory é mais rápida quanto ao acesso aos dados e possibilita tanto a escrita quanto a leitura, entre-
+tanto seus dados são perdidos quando é desligada a enrgia. Já a memória ROM (Read Only Memory) possui velocidade de acesso aos 
+dados menor em comparação à memória RAM e não perde seus dados quando é desligada a energia, porém ela possui apenas a opção de
+leitura.
+
+3. Considere o código abaixo:
+
+```C
+#include <stdio.h>
+int main(void)
+{
+	int i;
+	printf("Insira um número inteiro: ");
+	scanf("%d", &i);
+	if(i%2)
+		printf("%d eh impar.\n");
+	else
+		printf("%d eh par.\n");
+	return 0;
+}
+```
+
+Para este código, responda: (a) A variável `i` é armazenada na memória RAM ou ROM? Por quê? (b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+
+	Considerando a memória ROM como uma gama de memórias que possuem como principal finalidade a leitura de dados, como 
+as PROM, EPROM, EEPROM e memória Flash. Então, a variável 'i' é armazenada na memória RAM, pois logo em seguida será descartada,
+já o programa será armazenado na memória ROM, por que é de nosso interesse utilizá-lo novamente.
+
+4. Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+	
+	A diferença pricipal entre a arquiteura Von Neuman e a Harvard está no fato de que a Harvard separa a memória de dados da memória de instruções para assim trabalhar com as duas simultaneamente. Desta maneira, as intruções da Von Neuman acabam mais complexas pois requerem mais ciclos de clock para serem executadas, enquanto que as instruções em uma arquitetura Harvard conseguem trilhar um caminho mais rápido. Porém, a modelo Harvard possui menos intruções e não consegue realizar operações direto na memória.
+
+5. Considere a variável inteira `i`, armazenando o valor `0x8051ABCD`. Se `i` é armazenada na memória a partir do endereço `0x0200`, como ficam este byte e os seguintes, considerando que a memória é: (a) Little-endian; (b) Big-endian.
+
+	Big-endian se remete a uma organização a qual em uma palavra de 8 bytes o MSB está na posisão 0 e o LSBna posição 7. Já o Little-endian colcoa o MSB na posição 7 e o LSB na posição 0. Assim, podemos resumir que o Little-endian começa seu endereçamento na memória com o LSB e termina com o MSB, enquanto que o Big-endian começa com MSB e termina com o LSB.
+	
+	(a) 	0x0200 CD	(b)	0x0200 80 
+		0x0201 AB		0x0201 51
+		0x0202 51		0x0202 AB
+		0x0203 80		0x0203 CD
+
+6. Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+
+	Para somar duas variáveis A e B de 32 Bits o processador terá que armazenar cada variável em 2 registradores, onde o primeiro registrador contém o primeiro Byte e o segundo registrador contém o segundo Byte. Assim, deve ser feita uma operação de soma entre os dois registradores que contêm o primeiro byte de A e o primeiro de B e em seguinda fazer uma operação de soma entre o segundo byte de A e B e carry da operação anterior.
