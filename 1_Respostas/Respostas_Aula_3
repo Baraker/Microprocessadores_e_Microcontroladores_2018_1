@@ -1,0 +1,62 @@
+1. Dada uma variável `a` do tipo `char` (um byte), escreva os trechos de código em C para:
+	(a) Somente setar o bit menos significativo de `a`.
+      P1DIR |= BIT0;
+	(b) Somente setar dois bits de `a`: o menos significativo e o segundo menos significativo.
+      P1DIR |= (BIT0 + BIT1);
+	(c) Somente zerar o terceiro bit menos significativo de `a`.
+      P1DIR &=~ BIT2;
+	(d) Somente zerar o terceiro e o quarto bits menos significativo de `a`.
+      P1DIR &=~ (BIT4 + BIT5);
+	(e) Somente inverter o bit mais significativo de `a`.
+      P1DIR ^= BIT7;
+	(f) Inverter o nibble mais significativo de `a`, e setar o nibble menos significativo de `a`. 
+      P1DIR ^= 0xF0;
+      P1DIR |= 0x0F;
+      
+2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+
+	P1DIR = LED1 + LED2;
+	P1OUT = 0;
+	for(;;){
+		P1OUT |=  LED1 + LED2;	
+		P1OUT &= ~(LED1 + LED2);
+	}	
+
+3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
+
+	P1DIR = LED1 + LED2;
+	P1OUT = 0;
+	for(;;){	
+		while((P1IN & BTN) != 0){}	
+		P1OUT |=  LED1 + LED2;	
+		P1OUT &= ~(LED1 + LED2);
+		P1OUT |=  LED1 + LED2;
+		P1OUT &= ~(LED1 + LED2);
+		while((P1IN & BTN) ==0){}		
+	}		
+	
+
+4. Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
+	
+	int Pisca(){
+		P1OUT |=  LED1 + LED2;	
+		P1OUT &= ~(LED1 + LED2);
+	}
+
+5. Reescreva o código da questão 2 usando a função da questão 4.
+
+	P1DIR = LED1 + LED2;				// configuro as saídas
+	P1OUT = 0;				// Vcc neles
+	for(;;){
+		Pisca();
+	}
+	
+6. Reescreva o código da questão 3 usando a função da questão 4.
+P1DIR = LED1 + LED2;
+	P1OUT = 0;
+	for(;;){	
+		while((P1IN & BTN) != 0){}	
+		Pisca();
+		Pisca();
+		while((P1IN & BTN) ==0){}		
+	}
