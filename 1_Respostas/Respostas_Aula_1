@@ -1,0 +1,23 @@
+1. O que são sistemas embarcados?
+
+	São sistemas computacionais independentes de propósito específico que visão executar tarefas de forma sistemática e geralmente repetidas vezes. Seu corpo é pequeno e encapsulado e contém apenas o hardware necessário para a sua finalidade.
+
+2. O que são sistemas microprocesssados?
+
+	São sitemas de pequeno tamanho que utilizam um microprocessador para realizar o controle das atividades. Em geral os microprocessadores possuem uma unidade lógica aritimética chamada ULA, um banco de registradores, memória, decodificadores e um relógio contador.
+
+3. Apresente aplicações de sistemas embarcados: (a) para a indústria automotiva; (b) para eletrodomésticos; (c) para automação industrial.
+
+	(a) A eletrônica veicular como um todo utiliza sistemas embarcados para realizar o controle das funcionalidades do carro, como abrir e fechar os vidros, ligar o som, controlar o sistema de arrefecimento, etc.
+
+	(b) Praticamente todos os eletrodomésticos utilizam sistemas embarcados em seu funcionamento como em: geladeiras, microondas, cafeteiras, fogões digitais, arcondicionados, liquidificadores, etc.
+
+	(c) As máquinas que compoem os parques industriais, que hoje em sua maioria são automátizados, possuem sistemas embarcados para executar e controlar todas as suas funções, como por exemplo as máquinas que cortam folhas de madeira para a contrução de móveis.
+
+4. Cite arquiteturas possíveis e as diferenças entre elas.
+
+	As arquiteturas de memória classificam os sistemas embarcados em CISC e RISC. A CISC (Complex Instruction Set Computer) possui muma grande variedade de instruções, possui a memória de dados junto da memória de instruções, implementa muitas pipelines e acaba que perde velocidade uma vez que enfatiza a implementação sequencial. Já a RISC (Reduced Instruction Set Computer) possui a memória de dados separada da memória de instruções assim consegue realizar operações simultâneas e ganha velocidade, mas não possui tantas instruções disponíveis e não ocnsegue realizar operações aritiméticas diretamente na memória.
+	
+5. Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+	
+	A MSP430 possuí suporte para a utilização de uma grande gama de periféricos, consome pouquíssima energia, possui muitos registradores e é barata. Desta maneira, este chip dispõem das funcionalidades necessárias parao desenvolvimento do curso.
