@@ -6,7 +6,7 @@
 */
 
 
-Primo:		cmp.w	#0, R15
+Primo:			cmp.w	#0, R15
 			jz	end_primo_0
 			cmp.w	#1, R15
 			jz	end_primo_0
